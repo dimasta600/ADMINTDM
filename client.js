@@ -299,3 +299,14 @@ Ui.GetContext().TeamProp2.Value = { Team: "Blue", Prop: "Des" };
 Teams.Get("Blue").Properties.Get("Des").Value = des;   
 Ui.GetContext().TeamProp1.Value = { Team: "Red", Prop: "Des" };
 
+
+var banTrigger = AreaPlayerTriggerService.Get("banTrigger");
+
+banTrigger.Tags = ["banTrigger"];
+banTrigger.Enable = true;
+banTrigger.OnEnter.Add(function (player, area) {
+player.Spawns.Enable = false;
+player.Spawns.Despawn();
+
+player.Ui.Hint.Valume = player +""+"ТЫ ЗАБАНЕН ХАХАХАХА";
+});		       
