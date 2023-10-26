@@ -190,10 +190,10 @@ function SetGameMode()
 
 	var inventory = Inventory.GetContext();
 	if (GameMode.Parameters.GetBool("OnlyKnives")) {
-		inventory.MainInfinity.Value = false;
-		inventory.SecondaryInfinity.Value = false;
+		inventory.MainInfinity.Value = true;
+		inventory.SecondaryInfinity.Value = true;
 		inventory.MeleeInfinity.Value = true;
-		inventory.ExplosiveInfinity.Value = false;
+		inventory.ExplosiveInfinity.Value = true;
 		inventory.BuilInfinityd.Value = true;
 	} else {
 		inventory.MainInfinity.Value = true;
