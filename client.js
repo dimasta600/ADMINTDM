@@ -175,9 +175,9 @@ function SetBuildMode()
 	var inventory = Inventory.GetContext();
 	inventory.Main.Value = false;
 	inventory.Secondary.Value = false;
-	inventory.Melee.Value = true;
+	inventory.Melee.Value = false;
 	inventory.Explosive.Value = false;
-	inventory.Build.Value = true;
+	inventory.Build.Value = false;
 
 	mainTimer.Restart(BuildBaseTime);
 	Spawns.GetContext().enable = true;
@@ -190,17 +190,17 @@ function SetGameMode()
 
 	var inventory = Inventory.GetContext();
 	if (GameMode.Parameters.GetBool("OnlyKnives")) {
-		inventory.MainInfinity.Value = true;
-		inventory.SecondaryInfinity.Value = true;
-		inventory.MeleeInfinity.Value = true;
-		inventory.ExplosiveInfinity.Value = true;
-		inventory.BuilInfinityd.Value = true;
+		inventory.MainInfinity.Value = false;
+		inventory.SecondaryInfinity.Value = false;
+		inventory.MeleeInfinity.Value = false;
+		inventory.ExplosiveInfinity.Value = false;
+		inventory.BuilInfinityd.Value = false;
 	} else {
-		inventory.MainInfinity.Value = true;
-		inventory.SecondaryInfinity.Value = true;
-		inventory.MeleeInfinity.Value = true;
-		inventory.ExplosiveInfinity.Value = true;
-		inventory.BuildInfinity.Value = true;
+		inventory.MainInfinity.Value = false;
+		inventory.SecondaryInfinity.Value = false;
+		inventory.MeleeInfinity.Value = false;
+		inventory.ExplosiveInfinity.Value = false;
+		inventory.BuildInfinity.Value = false;
 	}
 
 	mainTimer.Restart(GameModeTime);
