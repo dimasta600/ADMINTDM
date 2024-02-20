@@ -298,30 +298,3 @@ Teams.Get("Red").Properties.Get("Des").Value = des;
 Ui.GetContext().TeamProp2.Value = { Team: "Blue", Prop: "Des" };    
 Teams.Get("Blue").Properties.Get("Des").Value = des;   
 Ui.GetContext().TeamProp1.Value = { Team: "Red", Prop: "Des" };
-
-
-var banTrigger = 
-AreaPlayerTriggerService.Get("banTrigger"); 
-banTrigger.Tags = ["banTrigger"]; 
-banTrigger.Enable = true; 
-banTrigger.OnEnter.Add(function (player, area) { 
-player.Spawns.Enable = false; 
-player.Spawns.Despawn();
-
-player.Ui.Hint.Value = player + " " + "ТЫ ЗАБАНЕН ХАХАХА"; 
-
-});
-
-
-var sb = new StringBuilder(100);
-			if (Main.HasValue && Main.Value) sb.Append("Main").Append('|');
-			if (Secondary.HasValue && Secondary.Value) sb.Append("Secondary").Append('|');
-			if (Melee.HasValue && Melee.Value) sb.Append("Melee").Append('|');
-			if (Explosive.HasValue && Explosive.Value) sb.Append("Explosive").Append('|');
-			if (Build.HasValue && Build.Value) sb.Append("Build").Append('|');
-
-			if (MainInfinity.HasValue && MainInfinity.Value) sb.Append("MainInfinity").Append('|');
-			if (SecondaryInfinity.HasValue && SecondaryInfinity.Value) sb.Append("SecondaryInfinity").Append('|');
-			if (ExplosiveInfinity.HasValue && ExplosiveInfinity.Value) sb.Append("ExplosiveInfinity").Append('|');
-			if (BuildInfinity.HasValue && BuildInfinity.Value) sb.Append("BuildInfinity").Append('|');
-			return sb.ToString();
