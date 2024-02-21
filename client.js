@@ -43,10 +43,13 @@ Ui.GetContext().MainTimerId.Value = mainTimer.Id;
 // ñîçäàåì êîìàíäû
 Teams.Add("Blue", "Teams/Blue", { b: 1 });
 Teams.Add("Red", "Teams/Red", { r: 1 });
+Teams.Add("Black","Teams/Black",{ g: 1});
 var blueTeam = Teams.Get("Blue");
+var blackTeam = Teams.Get("Black)
 var redTeam = Teams.Get("Red");
 blueTeam.Spawns.SpawnPointsGroups.Add(1);
-redTeam.Spawns.SpawnPointsGroups.Add(2);
+blackTeam.Spawns.SpawnPointsGroups.Add(2)
+redTeam.Spawns.SpawnPointsGroups.Add(3);
 blueTeam.Build.BlocksSet.Value = BuildBlocksSet.Blue;
 redTeam.Build.BlocksSet.Value = BuildBlocksSet.Red;
 
@@ -93,7 +96,8 @@ LeaderBoard.PlayersWeightGetter.Set(function(player) {
 
 // çàäàåì ÷òî âûâîäèòü ââåðõó
 Ui.GetContext().TeamProp1.Value = { Team: "Blue", Prop: "Deaths" };
-Ui.GetContext().TeamProp2.Value = { Team: "Red", Prop: "Deaths" };
+Ui.GetContext().TeamsProp2.Value = { Team: "Black",Prop: "Deatsh" };
+Ui.GetContext().TeamProp3.Value = { Team: "Red", Prop: "Deaths" };
 
 // ðàçðåøàåì âõîä â êîìàíäû ïî çàïðîñó
 Teams.OnRequestJoinTeam.Add(function(player,team){team.Add(player);});
@@ -126,6 +130,7 @@ Properties.OnTeamProperty.Add(function(context, value) {
 // ñ÷åò÷èê ñïàâíîâ
 Spawns.OnSpawn.Add(function(player) {
 	++player.Properties.Spawns.Value;
+
 });
 // ñ÷åò÷èê ñìåðòåé
 Damage.OnDeath.Add(function(player) {
