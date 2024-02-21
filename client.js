@@ -52,11 +52,13 @@ blackTeam.Spawns.SpawnPointsGroups.Add(2)
 redTeam.Spawns.SpawnPointsGroups.Add(3);
 blueTeam.Build.BlocksSet.Value = BuildBlocksSet.Blue;
 redTeam.Build.BlocksSet.Value = BuildBlocksSet.Red;
+blackTeam.Build.BlocksSet.Value = BuildBlocksSet.Black;
 
 // çàäàåì ìàêñ ñìåðòåé êîìàíä
 var maxDeaths = Players.MaxCount * Infinity;
-Teams.Get("Red").Properties.Get("Deaths").Value = maxDeaths;
-Teams.Get("Blue").Properties.Get("Deaths").Value = maxDeaths;
+Teams.Get("Red").Properties.Get("Deaths").Value = maxFuck;
+Teams.Get("Blue").Properties.Get("Deaths").Value = maxFuck;
+Teams.Get("Black").Properties.Get("Deaths").Value = maxFuck;
 // çàäàåì ÷òî âûâîäèòü â ëèäåðáîðäàõ
 LeaderBoard.PlayerLeaderBoardValues = [
 	{
@@ -87,7 +89,7 @@ LeaderBoard.TeamLeaderBoardValue = {
 };
 // âåñ êîìàíäû â ëèäåðáîðäå
 LeaderBoard.TeamWeightGetter.Set(function(team) {
-	return team.Properties.Get("Deaths").Value;
+	return team.Properties.Get("Fuck").Value;
 });
 // âåñ èãðîêà â ëèäåðáîðäå
 LeaderBoard.PlayersWeightGetter.Set(function(player) {
