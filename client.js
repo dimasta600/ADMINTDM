@@ -43,7 +43,7 @@ Ui.GetContext().MainTimerId.Value = mainTimer.Id;
 // ñîçäàåì êîìàíäû
 Teams.Add("Blue", "Teams/Blue", { b: 1 });
 Teams.Add("Red", "Teams/Red", { r: 1 });
-Teams.Add("Black","Teams/Black",{ g: 1});
+Teams.Add("Black","Teams/Black",{ s: 1});
 var blueTeam = Teams.Get("Blue");
 var blackTeam = Teams.Get("Black");
 var redTeam = Teams.Get("Red");
@@ -114,7 +114,7 @@ Spawns.GetContext().OnSpawn.Add(function(player){
 });
 Timers.OnPlayerTimer.Add(function(timer){
 	if(timer.Id!=immortalityTimerName) return;
-	timer.Player.Properties.Immortality.Value=false;
+	timer.Player.Properties.Immortality.Value=true;
 });
 
 // ïîñëå êàæäîé ñìåðòè èãðîêà îòíèìàåì îäíó ñìåðòü â êîìàíäå
@@ -126,7 +126,7 @@ Properties.OnPlayerProperty.Add(function(context, value) {
 // åñëè â êîìàíäå êîëè÷åñòâî ñìåðòåé çàíóëèëîñü òî çàâåðøàåì èãðó
 Properties.OnTeamProperty.Add(function(context, value) {
 	if (value.Name !== "Deaths") return;
-	if (value.Value <= 0) SetEndOfMatchMode();
+	if (value.Value <= 1) SetEndOfMatchMode();
 });
 
 // ñ÷åò÷èê ñïàâíîâ
@@ -289,6 +289,8 @@ Teams.Get("Red").Properties.Get("Des").Value = des;
 Ui.GetContext().TeamProp2.Value = { Team: "Red", Prop: "Des" };    
 Teams.Get("Blue").Properties.Get("Des").Value = des;   
 Ui.GetContext().TeamProp1.Value = { Team: "Blue", Prop: "Des" };   
+Teams.Get("Black").Properties.Get("Des").Value = des;   
+Ui.GetContext().TeamProp1.Value = { Team: "Black", Prop: "Des" };   
    
    
 // ������ ���������   
