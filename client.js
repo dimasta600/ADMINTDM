@@ -187,7 +187,7 @@ function SetBuildMode()
 	inventory.Build.Value = true;
 
 	mainTimer.Restart(BuildBaseTime);
-	Spawns.GetContext().enable = true;
+	Spawns.GetContext().enable = false;
 	SpawnTeams();
 }
 function SetGameMode() 
