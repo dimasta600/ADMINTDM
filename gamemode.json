@@ -1,1 +1,6 @@
-
+{
+  "Name": "ADMINTDM",
+  "Description": "by dimasta600",
+  "StartClientVersion": 2347,
+  "MapLists": [
+    {
