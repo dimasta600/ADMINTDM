@@ -45,7 +45,7 @@ Teams.Add("Blue", "Teams/Blue", { b: 1 });
 Teams.Add("Red", "Teams/Red", { r: 1 });
 Teams.Add("Black","Teams/Black",{ g: 1});
 var blueTeam = Teams.Get("Blue");
-var blackTeam = Teams.Get("Black)
+var blackTeam = Teams.Get("Black");
 var redTeam = Teams.Get("Red");
 blueTeam.Spawns.SpawnPointsGroups.Add(1);
 blackTeam.Spawns.SpawnPointsGroups.Add(2)
